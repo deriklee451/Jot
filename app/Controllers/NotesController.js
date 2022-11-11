@@ -19,6 +19,7 @@ export class NotesController {
 
         appState.on('notes', _drawNotes)
 
+
         _drawNotes()
     }
 
@@ -32,13 +33,27 @@ export class NotesController {
         form.reset()
 
 
+
     }
 
     setActiveNote(noteId) {
         notesService.setActiveNote(noteId)
         let activeNote = appState.activeNote
 
-        console.log('activeNote', activeNote.id);
+        console.log('activeNote', activeNote);
+
+        setHTML('active-note', activeNote.activeNoteTemplate)
+    }
+
+
+    saveNote() {
+        window.event.preventDefault()
+        let form = window.event.target
+        let formData = getFormData(form)
+        console.log(formData);
+        notesService.saveNote(formData)
+
+
 
     }
 

@@ -8,14 +8,13 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Note.js').Note[]} */
   values = loadState('values', [Value])
 
-
+  /** @type {import('./Models/Note.js').Note[]} */
   notes = [
     new Note({ name: 'random note' }),
     new Note({ name: 'random note2' })
   ]
-
+  /** @type {import('./Models/Note.js').Note|null} */
   activeNote = null
-
 
 }
 
