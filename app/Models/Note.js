@@ -12,7 +12,11 @@ export class Note {
 
     get listTemplate() {
         return `
-    <div class="col-6 p-2 card bg-light text-dark" style="--bs-bg-opacity: .5;">${this.name}</div>
+        <div class=" mx-3 p-2 selectable" onclick="app.notesController.setActiveNote('${this.id}')">
+        <div class="row">
+          <div class="col-7 card">${this.name}</div>
+        </div>
+      </div>
     `
     }
 

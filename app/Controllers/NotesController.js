@@ -33,4 +33,13 @@ export class NotesController {
 
 
     }
+
+    setActiveNote(noteId) {
+        notesService.setActiveNote(noteId)
+        let activeNote = appState.activeNote
+
+        console.log('activeNote', activeNote.id);
+
+    }
+
 }

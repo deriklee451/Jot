@@ -25,27 +25,71 @@
       </a>
     </nav>
   </header>
+
+
   <main class="container-fluid bg-dark">
 
+    <!-- NOTE LEFT COLUMN -->
     <div class="row">
-      <div id="notes-list"></div>
 
-      <!-- <div class="col-6 card bg-light text-dark" style="--bs-bg-opacity: .5;">test</div> -->
-    </div>
-    <div class="container-fluid">
-      <div class="row my-3">
-        <div class="col-4" id="note-form">
+      <div class="col-4 bg-dark">
 
-          <form onsubmit="app.notesController.createNote()">
-            <div class="form">
-              <input required type="text" minlength="3" class="form-control" id="note-name" placeholder="Enter Note"
-                name="name">
-              <label for="name">Note Name</label>
+        <section id="notes-list" class="row">
+
+          <!-- <div class="col-6 card bg-light text-dark" style="--bs-bg-opacity: .5;">test</div> -->
+
+          <!-- <div class="col-12 p-2 selectable">
+            <div class="row">
+              <div class="col-7">There was...</div>
+              <div class="col-3">10/10/22</div>
             </div>
-            <button type="submit" class="btn btn-success mt-3">Submit</button>
+          </div> -->
+
+        </section>
+        <!-- NOTE new note form -->
+        <!-- <section class=" row container-fluid"> -->
+        <div class="row ">
+          <div class="col-8" id="note-form">
+
+            <form onsubmit="app.notesController.createNote()">
+              <div class="form">
+                <input required type="text" minlength="3" class="form-control" id="note-name" placeholder="Enter Note"
+                  name="name">
+                <label for="name">Note Name</label>
+              </div>
+              <button type="submit" class="btn btn-success mt-3">Submit</button>
+
+          </div>
 
         </div>
+      </div>
+
+
+      <div class="col-7">
+        <div id="active-case" class="row">
+
+
+          <div>
+            <button class="btn btn-info"><i class="mdi mdi-pencil"></i></button>
+            <button class="btn btn-danger"><i class="mdi mdi-delete"></i></button>
+          </div>
+          <div class="col-12">10/10/2022</div>
+
+          <textarea class="col-12 report" name="" id="" cols="30" rows="10">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quos dicta soluta eos reprehenderit est placeat obcaecati labore repellat vel ducimus voluptas sint, provident, minus exercitationem error cupiditate non aperiam?
+        </textarea> -->
+
+        </div>
+
+
+        <!-- NOTE active note page  -->
+
+      </div>
   </main>
+
+
+
+
   <footer class="bg-dark text-light">
     <div class="text-center no-select">
       <p><small>Made with 💖 by CodeWorks</small></p>

@@ -13,6 +13,12 @@ class NotesService {
 
     }
 
+    setActiveNote(noteId) {
+        let foundNote = appState.notes.find(n => n.id == noteId)
+        console.log("foundPlayer");
+        appState.activeNote = foundNote
+
+    }
 
 
 }

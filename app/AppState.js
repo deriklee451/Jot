@@ -14,7 +14,7 @@ class AppState extends EventEmitter {
     new Note({ name: 'random note2' })
   ]
 
-
+  activeNote = null
 
 
 }
