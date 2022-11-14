@@ -2,7 +2,7 @@ import { appState } from "../AppState.js";
 import { notesService } from "../Services/NotesService.js";
 import { getFormData } from "../Utils/FormHandler.js";
 import { Pop } from "../Utils/Pop.js";
-import { setHTML } from "../Utils/Writer.js";
+import { setHTML, setText } from "../Utils/Writer.js";
 
 
 
@@ -11,6 +11,7 @@ function _drawNotes() {
     let template = ''
     notes.forEach(n => template += n.listTemplate)
     setHTML('notes-list', template)
+    setText('notes-count', appState.notes.length)
 }
 
 

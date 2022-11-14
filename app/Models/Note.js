@@ -6,7 +6,7 @@ export class Note {
     constructor(data) {
         this.id = generateId()
         this.name = data.name
-        this.date = data.date
+        this.date = data.date ? new Date(data.date) : new Date()
         this.page = data.page
         this.color = data.color
 
@@ -32,7 +32,8 @@ export class Note {
 
             <button class="btn btn-danger" onclick="app.notesController.deleteNote('${this.id}')"><i class="mdi mdi-delete"></i></button>
         </div>
-        <div class="col-12 text-center text-light">${this.name}</div>
+        <div class="col-12 text-center text-light">${this.name}<span style="color:${this.color}" ><i class="mdi mdi-star-face fs-3"></i></span></div>
+        <p class="text-light">${this.date.toLocaleDateString()}</p>
 
         <textarea class="col-12" name="page" id="page" cols="30" rows="10">
         ${this.page}
