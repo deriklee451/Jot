@@ -5,15 +5,25 @@ import { isValidProp } from "./Utils/isValidProp.js"
 import { loadState } from "./Utils/Store.js"
 
 class AppState extends EventEmitter {
-  /** @type {import('./Models/Note.js').Note[]} */
-  values = loadState('values', [Value])
+  /** @type {import('./Models/Value').Value[]} */
+  values = loadState('Values', [Value])
 
-  /** @type {import('./Models/Note.js').Note[]} */
+  /** @type {import('./Models/Note').Note[]} */
   notes = [
     new Note({ name: 'random note' }),
     new Note({ name: 'random note2' })
   ]
-  /** @type {import('./Models/Note.js').Note|null} */
+
+
+  // NOTE this does denote what is stored in this collection, but it also gives us intellisense in our code
+  /** @type {import('./Models/Note').Note[]} */
+  notes = loadState('notes', [Note])
+
+
+
+
+
+  /** @type {import('./Models/Note').Note} */
   activeNote = null
 
 }

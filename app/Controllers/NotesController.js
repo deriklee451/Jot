@@ -1,13 +1,15 @@
 import { appState } from "../AppState.js";
 import { notesService } from "../Services/NotesService.js";
 import { getFormData } from "../Utils/FormHandler.js";
+import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js";
 
 
 
 function _drawNotes() {
+    let notes = appState.notes
     let template = ''
-    appState.notes.forEach(n => template += n.listTemplate)
+    notes.forEach(n => template += n.listTemplate)
     setHTML('notes-list', template)
 }
 
@@ -55,6 +57,12 @@ export class NotesController {
 
 
 
+    }
+
+    async deleteNote(noteId) {
+        if (await Pop.confirm('Verifiy you want to delete this note')) {
+            notesService.deleteNote(noteId)
+        }
     }
 
 }
