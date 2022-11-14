@@ -23,11 +23,11 @@ class NotesService {
     }
 
     saveNote(newReport) {
+        console.log('is this working', newReport);
         let activeNote = appState.activeNote
         activeNote.page = newReport.page
-        saveState('activeNote', appState.activeNote)
+        saveState('notes', appState.notes)
         appState.emit('activeNote')
-        console.log('is this working');
 
     }
 
